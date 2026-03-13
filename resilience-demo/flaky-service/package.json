@@ -1,0 +1,7 @@
+{
+  "name": "flaky-service",
+  "version": "0.1.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "dependencies": { "express": "^4.19.2" }
+}
