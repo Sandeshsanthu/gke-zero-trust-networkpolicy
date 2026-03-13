@@ -1,2 +1,4 @@
 flask==3.0.0
-gunicorn
+gunicorn==21.2.0
+tenacity==8.2.3
+pybreaker==1.4.1

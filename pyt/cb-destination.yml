@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: fail-app-cb
+  namespace: retry-test
+spec:
+  host: fail-app-service
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 1      # If 1 request fails with 5xx...
+      interval: 10s                # ...within a 10s window...
+      baseEjectionTime: 30s        # ...kick the pod out for 30s.
+      maxEjectionPercent: 100      # Kick out all failing pods.

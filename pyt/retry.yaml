@@ -16,7 +16,7 @@ spec:
       containers:
       - name: fail-app
         # REPLACE [PROJECT_ID] below
-        image: us-central1-docker.pkg.dev/project-d1a95002-78b0-493b-b7e/my-repo/fail-app:v5
+        image: us-central1-docker.pkg.dev/project-d1a95002-78b0-493b-b7e/my-repo/fail-app:v8
         ports:
         - containerPort: 8080
 ---
