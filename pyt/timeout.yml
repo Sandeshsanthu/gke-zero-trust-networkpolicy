@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: fail-app-retry
+  namespace: retry-test
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - fail-app-gateway
+  http:
+  - route:
+    - destination:
+        host: fail-app-service
+    timeout: 2s # If the app takes 5s, Istio kills it at 2s

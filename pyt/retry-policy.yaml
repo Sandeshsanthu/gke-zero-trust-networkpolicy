@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: fail-app-retry
+  namespace: retry-test
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - fail-app-gateway # This link is critical
+  http:
+  - route:
+    - destination:
+        host: fail-app-service
+    retries:
+      attempts: 10 # High number to ensure we get a "Success"
+      retryOn: 5xx
